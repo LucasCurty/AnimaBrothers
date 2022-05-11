@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# AnimaBrother
+> *Um CRUD de animes, feito para estudar um pouco mais sobre **typescript** e **styled-Componentes**.*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Neste projeto você consegue :**
 
-## Available Scripts
+- Criar um usuário com email.
+- Favoritar ou desfavoritar seus animes.
+- Buscar animes por nome.
 
-In the project directory, you can run:
+#
 
-### `npm start`
+<div align="center">
+  <img  src="https://user-images.githubusercontent.com/74004642/167512723-6f0ad600-1884-49f5-8615-2de1699a9714.gif" alt="imagemProject"/>
+  
+  *refazendo o responsivo*
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Teste aqui** ↓
 
-### `npm test`
+🔨 
+*Para conferir o projeto clique [aqui](https://anima-brother.vercel.app/), voce sera redirecionado para site da vercel, onde estou hospedando.🔨*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#
 
-### `npm run build`
+**🏠 Logando**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+>Você ira conseguir logar clicando no icone do usuario 👤, logando sua conta google.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **Obs: Isto é um proejto, então não tenho acesso ao seu email diretamente.**
+#
+**🔎 Buscando:**
+>Clicando no icone do menu, e na opção [ Lista ], você poderia procurar um anime através de seu nome.
+#
+**💚 Adicionando:**
+>Você consegue adicionar um anime selecionando ele, depois ira aparecer um botão para adicionar aos seus favoritos.
+#
+**💔 Apagando:**
+>Em sua lista voce conseguirá apagar clicando no icone 💔 logo abaixo da imagem do anime.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#
+>**⚙️ Obs: Para adicionar ou apagar, você precisará estar logado.**
