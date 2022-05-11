@@ -15,29 +15,31 @@
   *refazendo o responsivo*
 </div>
 
-#
-
 **Teste aqui** ↓
 
 🔨 
 *Para conferir o projeto clique [aqui](https://anima-brother.vercel.app/), voce sera redirecionado para site da vercel, onde estou hospedando.🔨*
 
-#
+<br/>
+
+## 🔧 Como usar :
+<br/>
 
 **🏠 Logando**:
 
 >Você ira conseguir logar clicando no icone do usuario 👤, logando sua conta google.
 
 > **Obs: Isto é um proejto, então não tenho acesso ao seu email diretamente.**
-#
+--
 **🔎 Buscando:**
 >Clicando no icone do menu, e na opção [ Lista ], você poderia procurar um anime através de seu nome.
-#
+--
 **💚 Adicionando:**
 >Você consegue adicionar um anime selecionando ele, depois ira aparecer um botão para adicionar aos seus favoritos.
-#
+--
 **💔 Apagando:**
 >Em sua lista voce conseguirá apagar clicando no icone 💔 logo abaixo da imagem do anime.
 
-#
+---
+
 >**⚙️ Obs: Para adicionar ou apagar, você precisará estar logado.**
