@@ -62,3 +62,7 @@
 - Tipagem com typescript.
 - Biblioteca styled components.
 - Integração de login e database com Firebase.
+
+<br/>
+
+**Futuros uploads :** *Pretendo arrumar o css, arrumar o responsivo e organizar os documentos*
