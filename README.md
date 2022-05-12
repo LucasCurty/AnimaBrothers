@@ -22,7 +22,7 @@
 
 <br/>
 
-###  🔧 Como usar :
+##  🔧 Como usar :
 
 <br/> 
 
@@ -31,15 +31,34 @@
 >Você ira conseguir logar clicando no icone do usuario 👤, logando sua conta google.
 
 > **Obs: Isto é um proejto, então não tenho acesso ao seu email diretamente.**
-#
+
 **🔎 Buscando:**
 >Clicando no icone do menu, e na opção [ Lista ], você poderia procurar um anime através de seu nome.
-#
+
 **💚 Adicionando:**
 >Você consegue adicionar um anime selecionando ele, depois ira aparecer um botão para adicionar aos seus favoritos.
-#
+
 **💔 Apagando:**
 >Em sua lista voce conseguirá apagar clicando no icone 💔 logo abaixo da imagem do anime.
 
-#
 >**⚙️ Obs: Para adicionar ou apagar, você precisará estar logado.**
+
+----
+<br/>
+
+## ☄️ Tecnologias usadas :
+- [React](https://create-react-app.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Componentes](https://styled-components.com/docs/basics#extending-styles)
+- [Firebase](https://firebase.google.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Swiper](https://swiperjs.com/get-started)
+
+---
+<br/>
+
+## 🧑🏻‍🎓Oque aprendi :
+- Criar hooks personalizados.
+- Tipagem com typescript.
+- Biblioteca styled components.
+- Integração de login e database com Firebase.
