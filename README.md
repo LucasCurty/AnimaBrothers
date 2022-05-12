@@ -18,7 +18,7 @@
 **Teste aqui** ↓
 
 🔨 
-*Para conferir o projeto clique [aqui](https://anima-brother.vercel.app/), voce sera redirecionado para site da vercel, onde estou hospedando.🔨*
+*Para conferir o projeto clique [aqui](https://anima-brothers.vercel.app/), voce sera redirecionado para site da vercel, onde estou hospedando.🔨*
 
 <br/>
 
