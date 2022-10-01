@@ -1,12 +1,12 @@
-import { getAuth,GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { getAuth,GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {createContext, ReactNode, useEffect, useState } from 'react';
 
 export const AuthContext = createContext({} as AuthContext) ;
-
+// alo alo
 type User = {
   id: string | undefined;
   name: string | undefined;
-  avatar: string | undefined;
+  avatar: string | undefined
   isLoged: boolean
 }
 type AuthContext = {
@@ -37,7 +37,7 @@ type AuthGoogleProvider = {
             isLoged: true
           })
         })
-        .catch((error) => {
+        .catch((error: Error) => {
             console.log(error);
         });
 };
@@ -45,7 +45,7 @@ type AuthGoogleProvider = {
 function singOutGoogle(){
     auth.signOut()
       .then(()=>{console.log("User has ben desconnected")})
-      .catch(error => {console.log(error)})
+      .catch((error: Error) => {console.log(error)})
 
     setCurrentUser({
       avatar:undefined,

@@ -6,7 +6,7 @@ import { SectionMain } from "./global.css"
 
 function App() {
   return (
-    <SectionMain>
+  <SectionMain>
     <AuthGoogleProvider>
         <AppRouters />  
     </AuthGoogleProvider>
