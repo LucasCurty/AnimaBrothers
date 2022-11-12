@@ -31,6 +31,7 @@ export default function ListadeAnimes(){
 
     return(
         <styled.SectionList>
+            
             <styled.Form>
                 <p>Lista de animes</p>
                 <input

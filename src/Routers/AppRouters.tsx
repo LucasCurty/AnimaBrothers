@@ -11,11 +11,11 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 export default function AppRouters(){
     return(   
-        <BrowserRouter>
+        <BrowserRouter >
             <Header />
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/actualanime/:animeId" element={<ActualAnime />} />
+                <Route path="/actualanime/:animeId" element={<ActualAnime />}  />
                 <Route path="/listadeAnimes" element={<ListadeAnimes />} />
                 <Route path="/meusfavoritos" element={<Meusfavoritos />} />
             </Routes>

@@ -46,6 +46,7 @@ export default function Main(){
     
     return(
         <div>
+        
             {!data ? 
                 <p style={{textAlign:"center"}}>Carregando...</p> 
                 :

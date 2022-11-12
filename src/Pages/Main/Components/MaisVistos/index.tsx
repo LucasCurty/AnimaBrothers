@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide} from "swiper/react";
 // import required modules
 import { Pagination,Autoplay } from "swiper";
 
-import * as style from './styled'
 
 // Import Swiper styles
 import "swiper/css";
@@ -39,9 +38,18 @@ export default function MaisVistos(){
                     <div style={{maxWidth:"800px"}}>
                         {top10?.map((item,index)=>(
                             <SwiperSlide key={index}>
-                                <style.LinkAnime href={`/actualanime/${item.mal_id}`}>
-                                    <img src={item.images.jpg.large_image_url} alt={item.title} />
-                                </style.LinkAnime>
+                                <a className="" href={`/actualanime/${item.mal_id}`} >
+                                    <img 
+                                        src={item.images.jpg.large_image_url} 
+                                        alt={item.title}
+                                        className=" 
+                                            w-auto max-w-xs 
+                                            max-h-96 h-auto
+
+                                            hover:border-2 hover:border-indigo-200 hover:border-x-indigo-500 
+                                        "
+                                    />
+                                </a>
                             </SwiperSlide>
                         ))}           
                     </div>

@@ -17,6 +17,9 @@ export const Section = styled.section`
         margin: 1rem 2rem;
         font-size: 0.7rem;
         }
+        div img{
+            max-height: 300px;
+        }
     
     `
 export const IconArrow = styled(ArrowRedo)`

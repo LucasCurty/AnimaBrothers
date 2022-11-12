@@ -1,18 +1,11 @@
-
 import MaisVistos from './Components/MaisVistos'
 import UltimosLancamentos from './Components/UltimosLancamentos'
 
-
-
-import * as styled from './styled'
-
-export default function Main(){
-
-    
+export default function Main(){    
     return(
-        <styled.SectionMain>
+        <section>            
            <MaisVistos />
            <UltimosLancamentos />
-        </styled.SectionMain>
+        </section>
     )
 }
