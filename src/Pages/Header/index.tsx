@@ -2,8 +2,7 @@ import {  useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../Hooks/useAuth';
 
-import * as style from './styled';
-
+import {Person, Options} from '@styled-icons/ionicons-outline'
 import Login from './Login/Login';
 
 
@@ -29,13 +28,14 @@ const {currentUser} = useAuth()
     }
 
     return(
-        <style.Header className='py-4'>
+        <header className='p-4 flex flex-row justify-between px-6'>
             <nav 
                 onClick={userLogin}
                 style={{cursor:"pointer"}}
+                className=''
             >
                 {!currentUser?.isLoged ?
-                    <style.IconUser />
+                    <Person className='rounded-full shadow-xl shadow-amber-600 w-10'/>
                 : 
                     <img style={{
                         width:'35px',
@@ -44,20 +44,21 @@ const {currentUser} = useAuth()
                         }} 
                         src={currentUser?.avatar} 
                         alt="photoUser" 
+                        className='shadow-xl shadow-amber-600'
                     />
                 }
                 
                 {menuUser ?
-                    <style.NavUser>
+                    <nav className='w-10'>
                         <Login/>
-                    </style.NavUser>
+                    </nav>
                     : 
                     ""
                 }
             </nav>
                 
             {showMenu ? 
-                <style.NavShow >
+                <nav>
                     <ul>
                         <Link to="/meusfavoritos">
                             <li> Meus Favoritos</li>
@@ -67,20 +68,20 @@ const {currentUser} = useAuth()
                             <li> Lista</li>
                         </Link>
                     </ul>
-                </style.NavShow>
+                </nav>
             : 
                " "
             }
 
-            <Link  to="/">
-                <h1>Anima<span>Brother</span></h1>
+            <Link  to="/"  className=' transition duration-300 ease-in-out hover:-translate-y-1'>
+                <h1 className='bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-600 font-bold text-4xl' >Anima<span >Brother</span></h1>
             </Link>
 
-            <style.Btn 
+            <button
                 style={{backgroundColor: (showMenu) ? '#FFC857' : '#323031'}}
                 onClick={show} >
-            <style.IconMenu />
-            </style.Btn>
-        </style.Header>
+            <Options className='w-10'/>
+            </button>
+        </header>
     );
 }

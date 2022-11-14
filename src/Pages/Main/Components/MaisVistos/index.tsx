@@ -15,8 +15,11 @@ export default function MaisVistos(){
 
     return(
         <div>
-            {!data ? <em style={{textAlign:"center",color:"white"}}>Carregando Top animes...</em> :
-                
+            {!data ? 
+                <div className='w-full py-52 text-center animate-pulse'>
+                    <em className=' text-white'>Loading Top animes . . .</em> 
+                </div>
+                :
                     <Swiper 
                         pagination={{dynamicBullets: true,}}
                         autoplay={{delay: 2800, disableOnInteraction: false,}}
