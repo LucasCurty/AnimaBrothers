@@ -23,7 +23,6 @@ type AuthGoogleProvider = {
    const auth = getAuth();
    const [currentUser, setCurrentUser] = useState<User | undefined>()
   
-  
  async function singInGoogle(){
 
     signInWithPopup(auth, new GoogleAuthProvider())

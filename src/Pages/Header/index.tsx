@@ -29,7 +29,7 @@ const {currentUser} = useAuth()
     }
 
     return(
-        <style.Header>
+        <style.Header className='py-4'>
             <nav 
                 onClick={userLogin}
                 style={{cursor:"pointer"}}

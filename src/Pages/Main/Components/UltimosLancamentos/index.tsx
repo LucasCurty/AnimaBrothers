@@ -1,4 +1,4 @@
-import * as style from './styled'
+import { IconHeart } from '../../ActualAnime/styled';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,33 +18,51 @@ export default function UltimosLancamentos(){
 
     const {data} = useFetch<ApiAnim>('seasons/now')
 
-   
+   console.log(data)
+
     return(
         <>
-            <style.Section>
-                <h2> Ultimos Lançamentos <style.IconArrow /> </h2>
+            <section>
+                <h2 className='text-slate-200 font-medium 
+                inline-block py-2 px-4 ml-8 my-3  bg-amber-600 rounded-3xl
+                shadow-md shadow-slate-500'
+                 > Latest release <IconHeart  className='text-red-600'/> </h2>
                 <Swiper 
-                    spaceBetween={30}
-                    pagination={{
-                        clickable: true,
-                    }}
+                    pagination={{clickable: true,}}
                     modules={[Pagination,Autoplay]}
-                    autoplay={{
-                        delay: 1500,
-                        disableOnInteraction: false,
-                    }}
-                    className="mySwiper"
-                    >
+                    autoplay={{delay: 3500, disableOnInteraction: false,}}
+                    className="mySwiper">
+                        
                     {data?.map((item,index)=>(
-                        <SwiperSlide  key={index}>
-                            <a href={`/actualanime/${item.mal_id}`}>
-                            <img id="Imglanc"  src={item.images.jpg.large_image_url} alt={item.title} />
+                        <SwiperSlide  key={index} className='p-3'>
+                            <a href={`/actualanime/${item.mal_id}`}
+                                className='flex flex-row rounded-full '>
+                                
+                                <img id="Imglanc" className=' shadow-2xl shadow-amber-600 ' src={item.images.jpg.large_image_url} alt={item.title}/>
+                                <div className='bg-slate-600 p-4'>
+                                    <div className='flex flex-row'>{item.genres.map(item => 
+                                        <span className='mx-1 px-2 py-px text-amber-600 bg-slate-200 rounded-full'>
+                                            {item.name}
+                                        </span>)
+                                        }
+                                    </div>
+                                    <div className='text-slate-100 text-justify leading-6 p-3'>
+                                        <h1 className='font-medium text-neutral-900 underline text-amber-600'>Synopsis</h1>
+                                        {item.synopsis}
+                                    </div>
+                                    <div className='p-2'>
+                                        <p className='font-medium text-amber-600'>Year: <span className='font-light text-white	'>{item.year}</span></p>
+                                        <p className='font-medium text-amber-600'>Episodes: <span className='font-light text-white	'>{item.episodes === null ? 0 : item.episodes}</span></p>
+                                        <p className='font-medium text-amber-600'>Rating: <span className='font-light text-white italic'>{item.rating}</span></p> 
+                                        <p className='font-medium text-amber-600'>Status: <span className='font-light text-white'>{item.status}</span></p>                                        
+                                    </div>
+                                </div>
                             </a>
                         </SwiperSlide>
                     ))} 
                         
                 </Swiper>    
-            </style.Section>
+            </section>
         </>
     )
 

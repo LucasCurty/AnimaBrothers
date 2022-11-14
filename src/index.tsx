@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <main className="container mx-auto max-w-7xl h-screen bg-slate-700"> 
+      <main className="container mx-auto max-w-7xl h-fit bg-slate-700"> 
         <AuthGoogleProvider > 
             <AppRouters />  
         </AuthGoogleProvider>

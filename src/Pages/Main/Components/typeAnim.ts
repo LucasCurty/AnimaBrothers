@@ -6,4 +6,10 @@ export type ApiAnim = [{
         small_image_url:string
     }}
     mal_id: number;
+    genres:[{name:string;}];
+    synopsis:string;
+    year:number;
+    episodes:number;
+    rating:string;
+    status:string;
 }]
