@@ -12,4 +12,9 @@ export type ApiAnim = [{
     episodes:number;
     rating:string;
     status:string;
+    trailer:{
+        embed_url:string;
+
+    }
+    members:Number;
 }]

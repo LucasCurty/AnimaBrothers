@@ -28,7 +28,7 @@ const {currentUser} = useAuth()
     }
 
     return(
-        <header className='p-4 flex flex-row justify-between px-6'>
+        <header className='p-4 flex flex-row justify-between px-6 '>
             <nav 
                 onClick={userLogin}
                 style={{cursor:"pointer"}}

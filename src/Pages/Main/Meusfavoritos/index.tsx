@@ -19,7 +19,7 @@ export default function Meusfavoritos(){
     const {currentUser} = useAuth();
     const [ myFavorites, setMyFavorites] = useState<listaFavorite[] | DocumentData[]>()
 
-async function getUsers(){    
+ async function getUsers(){    
     if(currentUser){
         const data = await getDocs(collection(db, `${currentUser?.name}`));
         setMyFavorites(data.docs.map((doc)=>({...doc.data(), id: doc.id})));

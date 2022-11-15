@@ -1,4 +1,4 @@
-import { IconHeart } from '../../ActualAnime/styled';
+import { CaretDown } from '@styled-icons/ionicons-outline';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,9 +24,9 @@ export default function UltimosLancamentos(){
         <>
             <section>
                 <h2 className='text-slate-200 font-medium 
-                inline-block py-2 px-4 ml-8 my-3  bg-amber-600 rounded-3xl
+                inline-block py-1 px-4 ml-8 mt-4  bg-amber-600 rounded-3xl
                 shadow-md shadow-slate-500'
-                 > Latest release <IconHeart  className='text-red-600'/> </h2>
+                 > LATEST RELEASE <CaretDown  className='text-red-600 w-5 '/> </h2>
                 <Swiper 
                     pagination={{clickable: true,}}
                     modules={[Pagination,Autoplay]}
