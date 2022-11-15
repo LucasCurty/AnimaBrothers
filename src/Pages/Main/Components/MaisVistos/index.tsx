@@ -1,4 +1,4 @@
-import { ApiAnim} from '../typeAnim'
+import { ApiAnim} from '../../typeAnim'
 
 import { useFetch } from '../../../../Hooks/useFatch';
 

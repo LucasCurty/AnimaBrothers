@@ -1,5 +1,5 @@
 export type ApiAnim = [{
-    title: string;
+    title: string | any;
     images:{jpg:{
         image_url:string
         large_image_url:string

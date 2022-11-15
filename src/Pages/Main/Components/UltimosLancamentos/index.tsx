@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "../../../../styled.css"
 
 
-import {ApiAnim} from '../typeAnim'
+import {ApiAnim} from '../../typeAnim'
 import { useFetch } from '../../../../Hooks/useFatch';
 
 export default function UltimosLancamentos(){
