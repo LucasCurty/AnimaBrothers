@@ -9,6 +9,8 @@ import { useState } from 'react';
 
 import { Play, Flash,FlashOff } from '@styled-icons/ionicons-outline';
 
+import {} from '../Meusfavoritos'
+
 export default function Main(){
     const [add, setAdd] = useState<Boolean>(false)
     const {animeId} = useParams<string>()
@@ -29,6 +31,7 @@ console.log(data)
             .catch((error)=>{console.log(error)})
             .finally(()=>{
                 !add ? setAdd(true) : setAdd(false)
+                // Arrumar o codigo parar alterar
             })   
             
    }

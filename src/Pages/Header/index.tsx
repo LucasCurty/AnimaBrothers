@@ -28,11 +28,10 @@ const {currentUser} = useAuth()
     }
 
     return(
-        <header className='p-4 flex flex-row justify-between px-6 '>
+        <header className='p-4 flex flex-row justify-between px-6 relative'>
             <nav 
                 onClick={userLogin}
                 style={{cursor:"pointer"}}
-                className=''
             >
                 {!currentUser?.isLoged ?
                     <Person className='rounded-full shadow-xl shadow-amber-600 w-10'/>
@@ -49,7 +48,7 @@ const {currentUser} = useAuth()
                 }
                 
                 {menuUser ?
-                    <nav className='w-10'>
+                    <nav className='w-10 '>
                         <Login/>
                     </nav>
                     : 
@@ -57,31 +56,31 @@ const {currentUser} = useAuth()
                 }
             </nav>
                 
+           
+
+            <Link  to="/"  className=' transition duration-300 ease-in-out hover:-translate-y-1'>
+                <h1 className='bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-600 font-bold text-4xl' >Anima<span >Brother</span></h1>
+            </Link>
+            
+            
+            <button className='bg-amber-600 rounded text-white hover:text-amber-600 hover:bg-white' onMouseEnter={show}>
+            <Options className='w-8'/>
+            </button>
             {showMenu ? 
-                <nav>
-                    <ul>
-                        <Link to="/meusfavoritos">
-                            <li> Meus Favoritos</li>
+                <nav className='absolute z-10 top-20 right-0 bg-amber-600' onMouseLeave={show}>
+                    <ul className='text-white'>
+                        <Link to="/meusfavoritos" >
+                            <li className='p-2 hover:bg-white hover:text-amber-600'>Meus Favoritos</li>
                         </Link>
                         
-                        <Link to="/listadeAnimes">
-                            <li> Lista</li>
+                        <Link to="/listadeAnimes" >
+                            <li className='p-2 hover:bg-white hover:text-amber-600'>Lista</li>
                         </Link>
                     </ul>
                 </nav>
             : 
                " "
             }
-
-            <Link  to="/"  className=' transition duration-300 ease-in-out hover:-translate-y-1'>
-                <h1 className='bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-600 font-bold text-4xl' >Anima<span >Brother</span></h1>
-            </Link>
-
-            <button
-                style={{backgroundColor: (showMenu) ? '#FFC857' : '#323031'}}
-                onClick={show} >
-            <Options className='w-10'/>
-            </button>
         </header>
     );
 }

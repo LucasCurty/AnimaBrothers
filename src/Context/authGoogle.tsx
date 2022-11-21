@@ -18,13 +18,12 @@ type AuthGoogleProvider = {
    children : ReactNode;
 }
 
- export default function AuthGoogleProvider( props : AuthGoogleProvider) {
+ export default function AuthGoogleProvider( props : AuthGoogleProvider){
 
    const auth = getAuth();
    const [currentUser, setCurrentUser] = useState<User | undefined>()
   
- async function singInGoogle(){
-
+  async function singInGoogle(){
     signInWithPopup(auth, new GoogleAuthProvider())
         .then((res) => {
           const user = res.user as any;
@@ -39,22 +38,22 @@ type AuthGoogleProvider = {
         .catch((error: Error) => {
             console.log(error);
         });
-};
+  };
 
-function singOutGoogle(){
-    auth.signOut()
-      .then(()=>{console.log("User has ben desconnected")})
-      .catch((error: Error) => {console.log(error)})
+  function singOutGoogle(){
+      auth.signOut()
+        .then(()=>{console.log("User has ben desconnected")})
+        .catch((error: Error) => {console.log(error)})
 
-    setCurrentUser({
-      avatar:undefined,
-      id: undefined,
-      name: undefined,
-      isLoged:false
-    })
-}
+      setCurrentUser({
+        avatar:undefined,
+        id: undefined,
+        name: undefined,
+        isLoged:false
+      })
+  }
       
-      useEffect(()=>{
+  useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged((user : any) => {
           if(user){
             setCurrentUser({
@@ -66,11 +65,11 @@ function singOutGoogle(){
          }
        })
        unsubscribe();
-     },[])
+  },[])
       
-      return(
-        <AuthContext.Provider value={{currentUser, singInGoogle,singOutGoogle}}>
-          {props.children}
-        </AuthContext.Provider>
-      ) 
+  return(
+    <AuthContext.Provider value={{currentUser, singInGoogle,singOutGoogle}}>
+      {props.children}
+    </AuthContext.Provider>
+  ) 
 };

@@ -2,8 +2,7 @@ import { getFirestore, collection,getDocs, DocumentData, doc, deleteDoc} from 'f
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../../Hooks/useAuth';
 import { appfirebase } from '../../../Services/firebaseConfig';
-
-import * as styled from './styled'
+import {Trash} from '@styled-icons/ionicons-outline'
 
 type listaFavorite = {
     anime:{
@@ -28,6 +27,7 @@ export default function Meusfavoritos(){
     }
 }
 
+
 async function Delete(id : string) {
     const docAnim = doc(db, `${currentUser?.name}`, id )
     await deleteDoc(docAnim)
@@ -37,10 +37,10 @@ async function Delete(id : string) {
 useEffect( ()=>{getUsers();},[currentUser?.isLoged])
 
     return(
-        <styled.Section>
+        <section>
                
-            <ul>
-            {(currentUser?.isLoged == false) ?
+            <ul className='flex flex-wrap justify-center gap-x-6'>
+            {(currentUser?.isLoged === false) ?
                 <span style={{
                     color: 'white',
                     padding: '2rem'
@@ -48,18 +48,20 @@ useEffect( ()=>{getUsers();},[currentUser?.isLoged])
             :
                 myFavorites?.map(item => { 
                     return(
-                        <li key={item.id}>
-                            <a href={`/actualanime/${item.anime.id}`}>
-                                <p>{item.anime.title}</p>
-                                <img src={item.anime.url} alt={item.id} /> 
+                        <li key={item.id} className='relative'>
+                            <a href={`/actualanime/${item.anime.id}`} className='text-center'>
+                                <h1 className='text-slate-200 mb-1 text-mg font-semibold'>{item.anime.title}</h1>
+                                <img src={item.anime.url} alt={item.id} className='w-52 max-h-72 rounded'/> 
                             </a>
-                                <button onClick={()=> Delete(item.id)}><styled.Icon/></button>
+                                <button onClick={()=> Delete(item.id)} className=' absolute  p-1 bottom-4 right-1 bg-amber-400 rounded hover:bg-amber-600 hover:text-white'>
+                                    <Trash className='w-5 '/>
+                                </button>
                         </li>
                     )
                 })
                 }
             </ul>
             
-        </styled.Section>
+        </section>
     )
 }

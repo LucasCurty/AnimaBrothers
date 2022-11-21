@@ -38,7 +38,7 @@ export default function UltimosLancamentos(){
                             <a href={`/actualanime/${item.mal_id}`}
                                 className='flex flex-row rounded-full '>
                                 
-                                <img id="Imglanc" className='shadow-2xl shadow-amber-600 ' src={item.images.jpg.large_image_url} alt={item.title}/>
+                                <img className='shadow-2xl shadow-amber-600 ' src={item.images.jpg.large_image_url} alt={item.title}/>
                                 <div className='bg-gradient-to-r from-slate-700 to-slate-600 p-4'>
                                     <div className='flex flex-row'>{item.genres.map(item => 
                                         <span className='mx-1 px-2 py-px text-slate-600 font-semibold bg-gradient-to-r from-slate-100 to-amber-600 rounded-full'>
