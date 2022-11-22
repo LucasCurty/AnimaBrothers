@@ -28,22 +28,18 @@ const {currentUser} = useAuth()
     }
 
     return(
-        <header className='p-4 flex flex-row justify-between px-6 relative'>
+        <header className='p-4 flex flex-row items-center justify-between px-6 relative'>
             <nav 
-                onClick={userLogin}
-                style={{cursor:"pointer"}}
+                onMouseEnter={userLogin}
+                className='items-center'
             >
                 {!currentUser?.isLoged ?
-                    <Person className='rounded-full shadow-xl shadow-amber-600 w-10'/>
+                    <Person className='rounded-full shadow-xl shadow-amber-600 w-8 p-1 text-white'/>
                 : 
-                    <img style={{
-                        width:'35px',
-                        borderRadius:'50px',
-                        marginTop:'5px',
-                        }} 
+                    <img
                         src={currentUser?.avatar} 
                         alt="photoUser" 
-                        className='shadow-xl shadow-amber-600'
+                        className='shadow-xl shadow-amber-600 w-8 rounded-full'
                     />
                 }
                 
@@ -63,7 +59,7 @@ const {currentUser} = useAuth()
             </Link>
             
             
-            <button className='bg-amber-600 rounded text-white hover:text-amber-600 hover:bg-white' onMouseEnter={show}>
+            <button className='bg-amber-400 roundednpx text-white hover:bg-amber-600' onMouseEnter={show}>
             <Options className='w-8'/>
             </button>
             {showMenu ? 

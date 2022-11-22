@@ -45,10 +45,10 @@ console.log(data)
                 </div> 
                 :
                 <main>
-                    <section className='flex flex-row justify-between  p-6 pt-12 mx-6'>
+                    <section className='flex flex-row justify-between  p-6 pt-12 mx-24'>
                         <div className='text-slate-100'>
                             <h1 className='text-2xl font-medium mb-4'>{data?.title}</h1>
-                            <p className='text-lg ml-2 mb-2'>Episodeos: <span className=' underline underline-offset-4 decoration-amber-600 '>{data.episodes === null ? 0 : data.episodes}</span></p>
+                            <p className='text-lg ml-2 mb-2'>Episodes: <span className=' underline underline-offset-4 decoration-amber-600 '>{data.episodes === null ? 0 : data.episodes}</span></p>
                             <p className='text-lg ml-2 mb-2'>Score: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.score}</span></p> 
                             <p className='text-lg ml-2 mb-2'>Favotiro: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.favorites}</span></p>
                             <p className='text-lg ml-2 mb-2'>Year: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.year}</span></p>
