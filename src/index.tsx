@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AuthGoogleProvider from "./Context/authGoogle";
-import AppRouters from "./Routers/AppRouters"
+import AuthGoogleProvider from "./shared/Context/authGoogle";
+import AppRouters from "./shared/Routers/AppRouters"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
