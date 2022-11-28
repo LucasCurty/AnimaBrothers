@@ -1,7 +1,7 @@
 import { getFirestore, collection,getDocs, DocumentData, doc, deleteDoc} from 'firebase/firestore'
 import { useEffect, useState } from 'react';
-import { useAuth } from '../../../Hooks/useAuth';
-import { appfirebase } from '../../../Services/firebaseConfig';
+import { useAuth } from '../../../shared/Hooks/useAuth';
+import { appfirebase } from '../../../services/firebaseConfig';
 import {Trash} from '@styled-icons/ionicons-outline'
 
 type listaFavorite = {
@@ -44,7 +44,7 @@ useEffect( ()=>{getUsers();},[currentUser?.isLoged])
                 <span style={{
                     color: 'white',
                     padding: '2rem'
-                }}>Conecte com sua conta ou adicione um anime aos favoritos</span>
+                }}>Please, enter your count or add an anime</span>
             :
                 myFavorites?.map(item => { 
                     return(

@@ -12,7 +12,7 @@ import "../../../../styled.css"
 
 
 import {ApiAnim} from '../../typeAnim'
-import { useFetch } from '../../../../Hooks/useFatch';
+import { useFetch } from '../../../../shared/Hooks/useFatch';
 
 export default function UltimosLancamentos(){
 

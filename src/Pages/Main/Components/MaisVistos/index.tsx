@@ -1,6 +1,6 @@
 import { ApiAnim} from '../../typeAnim'
 
-import { useFetch } from '../../../../Hooks/useFatch';
+import { useFetch } from '../../../../shared/Hooks/useFatch';
 
 // Swiper Lib
 import { Swiper, SwiperSlide } from "swiper/react";

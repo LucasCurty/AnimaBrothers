@@ -1,13 +1,13 @@
 // import pages area
-import Main from "../Pages/Main/index"
-import ActualAnime from "../Pages/Main/ActualAnime/index"
-import ListadeAnimes from "../Pages/Main/ListadeAnimes/index"
-import Header from "../Pages/Header"
-import Footer from "../Pages/Footer"
-import Meusfavoritos from "../Pages/Main/Meusfavoritos/index"
+import Main from "../pages/Main/index"
+import ActualAnime from "../pages/Main/ActualAnime/index"
+import ListadeAnimes from "../pages/Main/ListadeAnimes/index"
+import Header from "../pages/Header"
+import Footer from "../pages/Footer"
+import Meusfavoritos from "../pages/Main/Meusfavoritos/index"
 
 //import react-router-dom
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 export default function AppRouters(){
     return(   
@@ -18,6 +18,8 @@ export default function AppRouters(){
                 <Route path="/actualanime/:animeId" element={<ActualAnime />}  />
                 <Route path="/listadeAnimes" element={<ListadeAnimes />} />
                 <Route path="/meusfavoritos" element={<Meusfavoritos />} />
+
+                <Route path="*" element={<Navigate to="/"/>} />
             </Routes>
             <Footer/> 
          </BrowserRouter>

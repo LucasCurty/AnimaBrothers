@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { useFetch } from '../../../Hooks/useFatch';
+import { useFetch } from '../../../shared/Hooks/useFatch';
 // import SearchInput from './components/SearchInput'
 
-import useDebounce from '../../../Hooks/useDebounce';
+import useDebounce from '../../../shared/Hooks/useDebounce';
 // style of page
 import * as styled from './styled'
 
@@ -33,14 +33,13 @@ export default function ListadeAnimes(){
         <styled.SectionList>
             
             <styled.Form>
-                <p>Lista de animes</p>
                 <input
-                    placeholder='Digite um anime '
+                    placeholder='Type the name of the anime...'
                     onChange={debounced}
                 />
             </styled.Form>
             <styled.DivListAnim>
-                {isFacthing ? <p style={{paddingTop:"1rem"}}>Carregando...</p> 
+                {isFacthing ? <p style={{paddingTop:"1rem"}}>Loading...</p> 
                 :   <div>
                         {data?.map((item,index)=>{
                             return(

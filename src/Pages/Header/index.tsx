@@ -1,6 +1,6 @@
 import {  useState } from 'react';
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../Hooks/useAuth';
+import { useAuth } from '../../shared/Hooks/useAuth';
 
 import {Person, Options} from '@styled-icons/ionicons-outline'
 import Login from './Login/Login';

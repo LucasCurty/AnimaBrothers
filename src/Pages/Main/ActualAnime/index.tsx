@@ -1,9 +1,9 @@
 import {useParams } from 'react-router-dom'
 
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
-import { useFetch } from '../../../Hooks/useFatch';
-import { appfirebase } from '../../../Services/firebaseConfig';
-import { useAuth } from '../../../Hooks/useAuth';
+import { useFetch } from '../../../shared/Hooks/useFatch';
+import { appfirebase } from '../../../services/firebaseConfig';
+import { useAuth } from '../../../shared/Hooks/useAuth';
 import { ApiAnim } from '../typeAnim';
 import { useState } from 'react';
 
