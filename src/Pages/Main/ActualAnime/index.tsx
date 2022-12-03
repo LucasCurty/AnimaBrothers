@@ -18,7 +18,6 @@ export default function Main(){
     const {currentUser} = useAuth();
     const db = getFirestore(appfirebase);
 
-console.log(data)
     function saveInFavorite(){
        
             setDoc(doc(db, `${currentUser?.name}`,`${data?.title}`), { 

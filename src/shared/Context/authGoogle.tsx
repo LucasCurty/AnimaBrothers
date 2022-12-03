@@ -1,8 +1,10 @@
 import { getAuth,GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {createContext, ReactNode, useEffect, useState } from 'react';
 
+// My Context
 export const AuthContext = createContext({} as AuthContext) ;
-// alo alo
+
+// Objects Types
 type User = {
   id: string | undefined;
   name: string | undefined;

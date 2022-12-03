@@ -4,8 +4,8 @@ import { useAuth } from '../../../shared/Hooks/useAuth';
 import { appfirebase } from '../../../services/firebaseConfig';
 import {Trash} from '@styled-icons/ionicons-outline'
 
-type listFavorite = {
-        id: string;
+type listaFavorite = {
+        id: number;
         title: string;
         url:string;
 }
@@ -13,14 +13,14 @@ export default function Meusfavoritos(){
 
     const db = getFirestore(appfirebase);
     const {currentUser} = useAuth();
-    const [ myFavorites, setMyFavorites] = useState<listFavorite[] | DocumentData[]>()
+    const [ myFavorites, setMyFavorites] = useState<listaFavorite[] | DocumentData[]>()
 
  async function getUsers(){    
     if(currentUser){
         const data = await getDocs(collection(db, `${currentUser?.name}`));
         setMyFavorites(data.docs.map((doc)=>({...doc.data(), id: doc.id})));
     }else{
-        console.log('User not conected')
+        console.log('User not connected')
     }
 }
 
@@ -31,11 +31,9 @@ async function Delete(id : string) {
     getUsers()
 }
 
-useEffect( ()=>{
-        getUsers() 
-        console.log(myFavorites)
-},[currentUser?.isLogged])
+useEffect( ()=>{getUsers();},[currentUser?.isLogged])
 
+console.log(myFavorites)
     return(
         <section>
                
