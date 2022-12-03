@@ -33,7 +33,7 @@ const {currentUser} = useAuth()
                 onMouseEnter={userLogin}
                 className='items-center'
             >
-                {!currentUser?.isLoged ?
+                {!currentUser?.isLogged ?
                     <Person className='rounded-full shadow-xl shadow-amber-600 w-8 p-1 text-white'/>
                 : 
                     <img

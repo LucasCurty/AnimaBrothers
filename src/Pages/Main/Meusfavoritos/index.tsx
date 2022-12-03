@@ -4,19 +4,16 @@ import { useAuth } from '../../../shared/Hooks/useAuth';
 import { appfirebase } from '../../../services/firebaseConfig';
 import {Trash} from '@styled-icons/ionicons-outline'
 
-type listaFavorite = {
-    anime:{
-        id: number;
+type listFavorite = {
+        id: string;
         title: string;
         url:string;
-        }
-    id:string;
 }
 export default function Meusfavoritos(){
 
     const db = getFirestore(appfirebase);
     const {currentUser} = useAuth();
-    const [ myFavorites, setMyFavorites] = useState<listaFavorite[] | DocumentData[]>()
+    const [ myFavorites, setMyFavorites] = useState<listFavorite[] | DocumentData[]>()
 
  async function getUsers(){    
     if(currentUser){
@@ -34,13 +31,16 @@ async function Delete(id : string) {
     getUsers()
 }
 
-useEffect( ()=>{getUsers();},[currentUser?.isLoged])
+useEffect( ()=>{
+        getUsers() 
+        console.log(myFavorites)
+},[currentUser?.isLogged])
 
     return(
         <section>
                
             <ul className='flex flex-wrap justify-center gap-x-6'>
-            {(currentUser?.isLoged === false) ?
+            {(currentUser?.isLogged === false) ?
                 <span style={{
                     color: 'white',
                     padding: '2rem'
@@ -49,9 +49,9 @@ useEffect( ()=>{getUsers();},[currentUser?.isLoged])
                 myFavorites?.map(item => { 
                     return(
                         <li key={item.id} className='relative'>
-                            <a href={`/actualanime/${item.anime.id}`} className='text-center'>
-                                <h1 className='text-slate-200 mb-1 text-mg font-semibold'>{item.anime.title}</h1>
-                                <img src={item.anime.url} alt={item.id} className='w-52 max-h-72 rounded'/> 
+                            <a href={`/actualanime/${item.id}`} className='text-center'>
+                                <h1 className='text-slate-200 mb-1 text-mg font-semibold'>{item.title}</h1>
+                                <img src={item.url} alt={item.id} className='w-52 max-h-72 rounded'/> 
                             </a>
                                 <button onClick={()=> Delete(item.id)} className=' absolute  p-1 bottom-4 right-1 bg-amber-400 rounded hover:bg-amber-600 hover:text-white'>
                                     <Trash className='w-5 '/>

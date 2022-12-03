@@ -11,13 +11,10 @@ export default function Login(){
     
     function handleUserLogout(){
         if(currentUser){return singOutGoogle();}
-    }
-    
-
-    
+    } 
         return(
             <ul className='absolute'>     
-                {currentUser?.isLoged ?
+                {currentUser?.isLogged ?
                     <li className='flex bg-amber-500 w-24 rounded' >
                         <button className='text-white px-2'onClick={handleUserLogout}>  
                             Logout

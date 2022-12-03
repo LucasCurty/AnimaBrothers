@@ -8,7 +8,7 @@ const api = axios.create({
 
 export function useFetch<T = unknown>(url : string){
     const [data, setData] = useState<T | null>(null)
-    const [isFacthing, setIsFetching] = useState(true)
+    const [isFetching, setIsFetching] = useState(true)
 
     useEffect(()=>{
 
@@ -19,5 +19,5 @@ export function useFetch<T = unknown>(url : string){
         })
     },[url])
 
-    return {data ,isFacthing}
+    return {data ,isFetching}
 }

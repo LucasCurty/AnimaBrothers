@@ -7,7 +7,7 @@ type User = {
   id: string | undefined;
   name: string | undefined;
   avatar: string | undefined
-  isLoged: boolean
+  isLogged: boolean
 }
 type AuthContext = {
   currentUser : User | undefined;
@@ -32,7 +32,7 @@ type AuthGoogleProvider = {
             id : user.uid,
             name: user.displayName,
             avatar: user.photoURL,
-            isLoged: true
+            isLogged: true
           })
         })
         .catch((error: Error) => {
@@ -49,7 +49,7 @@ type AuthGoogleProvider = {
         avatar:undefined,
         id: undefined,
         name: undefined,
-        isLoged:false
+        isLogged:false
       })
   }
       
@@ -60,7 +60,7 @@ type AuthGoogleProvider = {
               id : user.uid,
               name : user.displayName,
               avatar: user.photoURL,
-              isLoged: true
+              isLogged: true
             })
          }
        })

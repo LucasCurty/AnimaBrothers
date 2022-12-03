@@ -21,7 +21,7 @@ type Geners = {
 export default function ListadeAnimes(){
     const [animeName, setAnimeName] = useState<string>('')
 
-    const {data , isFacthing} = useFetch<Geners[]>(`anime?q=${animeName}`)
+    const {data , isFetching} = useFetch<Geners[]>(`anime?q=${animeName}`)
 
 
     function handleChange(e : any){
@@ -39,7 +39,7 @@ export default function ListadeAnimes(){
                 />
             </styled.Form>
             <styled.DivListAnim>
-                {isFacthing ? <p style={{paddingTop:"1rem"}}>Loading...</p> 
+                { isFetching ? <p style={{paddingTop:"1rem"}}>Loading...</p> 
                 :   <div>
                         {data?.map((item,index)=>{
                             return(
