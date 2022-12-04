@@ -21,20 +21,18 @@ export default function Meusfavoritos(){
         const docRef = await getDocs(collection(db, `${currentUser?.name}`));
         setMyFavorites(docRef.docs.map((doc)=>({...doc.data()})));
     }else{
-        console.log('User not connected')
+       console.log('User not connected')
     }
 }
 
 
-async function Delete(id : string) {
-    const docAnim = doc(db, `${currentUser?.name}`, id )
-    await deleteDoc(docAnim)
+async function Delete(title : string) {
+   await deleteDoc(doc(db, `${currentUser?.name}`, title))
     getUsers()
 }
 
-useEffect( ()=>{getUsers();},[currentUser?.isLogged])
+useEffect( ()=>{getUsers();},[currentUser?.isLogged,])
 
-console.log(myFavorites)
     return(
         <section>
                
@@ -47,12 +45,12 @@ console.log(myFavorites)
             :
                 myFavorites?.map(item => { 
                     return(
-                        <li key={item.title} className='relative'>
+                        <li key={item.title} className='relative w-52'>
                             <a href={`actualanime/${item.id}`} className='text-center'>
-                                <h1 className='text-slate-200 mb-1 text-mg font-semibold'>{item.title}</h1>
-                                <img src={item.url} alt={item.title} className='w-52 max-h-72 rounded'/> 
+                                <h1 className='text-slate-200 mb-1 text-mg font-semibold max-w-xs truncate'>{item.title}</h1>
+                                <img src={item.url} alt={item.title} className='w-52 m-auto max-h-72 rounded'/> 
                             </a>
-                                <button onClick={()=> Delete(item.id)} className=' absolute  p-1 bottom-4 right-1 bg-amber-400 rounded hover:bg-amber-600 hover:text-white'>
+                                <button onClick={()=> Delete(item.title)} className=' absolute  p-1 bottom-4 right-1 bg-amber-400 rounded hover:bg-amber-600 hover:text-white'>
                                     <Trash className='w-5 '/>
                                 </button>
                         </li>
@@ -60,7 +58,6 @@ console.log(myFavorites)
                 })
             }
             </ul>
-            
         </section>
     )
 }
