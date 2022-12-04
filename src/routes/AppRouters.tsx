@@ -15,7 +15,7 @@ export default function AppRouters(){
             <Header />
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/actualanime/:animeId" element={<ActualAnime />}  />
+                <Route path="/actualanime/:IdAnime" element={<ActualAnime />}  />
                 <Route path="/listadeAnimes" element={<ListadeAnimes />} />
                 <Route path="/meusfavoritos" element={<Meusfavoritos />} />
 

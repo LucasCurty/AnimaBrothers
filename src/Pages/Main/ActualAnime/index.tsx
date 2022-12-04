@@ -1,40 +1,39 @@
-import { useState } from 'react';
 import {useParams } from 'react-router-dom'
-
-import { useFetch } from '../../../shared/Hooks/useFatch';
-import { useAuth } from '../../../shared/Hooks/useAuth';
-
 import { doc, getFirestore, setDoc } from 'firebase/firestore';
+import { useFetch } from '../../../shared/Hooks/useFatch';
 import { appfirebase } from '../../../services/firebaseConfig';
-
+import { useAuth } from '../../../shared/Hooks/useAuth';
 import { ApiAnim } from '../typeAnim';
+import { useState } from 'react';
 
 import { Play, Flash,FlashOff } from '@styled-icons/ionicons-outline';
 
+
 export default function Main(){
-    const [add, setAdd] = useState<Boolean>(false)
-    const {animeId} = useParams<string>()
-    const {data} = useFetch<ApiAnim | any>(`anime/${animeId}`)
+    const [add, setAdd] = useState<Boolean>(true)
+    const {IdAnime} = useParams()
+    const {data} = useFetch<ApiAnim>(`anime/${IdAnime}`)
     const {currentUser} = useAuth();
     const db = getFirestore(appfirebase);
 
-    function saveInFavorite(){
-       
-            setDoc(doc(db, `${currentUser?.name}`,`${data?.title}`), { 
+console.log(data)
+    async function saveInFavorite(){       
+            await setDoc(doc(db, `${currentUser?.name}`,`${data?.title}`), {
+                    id: data?.mal_id,
                     title: data?.title,
-                    url: data?.images.jpg.image_url,
-                    id: data?.mal_id
-            })
+                    url: data?.images.jpg.image_url
+                })
             .catch((error)=>{console.log(error)})
             .finally(()=>{
-                !add ? setAdd(true) : setAdd(false)
+                alert("Adicionado")
+                //!add ? setAdd(true) : setAdd(false)
+                // Arrumar o codigo parar alterar
             })   
             
    }
     
     return(
-        <div>
-        
+        <div>        
             {!data ? 
                 <div className='w-full h-screen py-52 text-center animate-pulse'>
                     <em className=' text-white'>Loading Anime . . .</em> 
@@ -45,15 +44,15 @@ export default function Main(){
                         <div className='text-slate-100'>
                             <h1 className='text-2xl font-medium mb-4'>{data?.title}</h1>
                             <p className='text-lg ml-2 mb-2'>Episodes: <span className=' underline underline-offset-4 decoration-amber-600 '>{data.episodes === null ? 0 : data.episodes}</span></p>
-                            <p className='text-lg ml-2 mb-2'>Score: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.score}</span></p> 
+                            <p className='text-lg ml-2 mb-2'>Score: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.members}</span></p> 
                             <p className='text-lg ml-2 mb-2'>Favotiro: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.favorites}</span></p>
                             <p className='text-lg ml-2 mb-2'>Year: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.year}</span></p>
                             <p className='text-lg ml-2 mb-2'>Status: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.status}</span></p>
                             <p className='text-lg ml-2 mb-2'>Rating: <span className=' underline underline-offset-4 decoration-amber-600 '>{data?.rating}</span></p>
 
-                            <p className='text-lg ml-2 mb-2'>Generos: {data?.genres.map((item: { mal_id: number, name: string;}) => <span key={item.mal_id} className='mr-2 underline underline-offset-4 decoration-amber-600 '>{item.name}</span>)}
+                            <p className='text-lg ml-2 mb-2'>Generos: {data?.genres.map((item : any ) => <span key={item.name} className='mr-2 underline underline-offset-4 decoration-amber-600 '>{item.name}</span>)}
                             </p>
-                            {add === true ?
+                            {add ?
 
                                 <button onClick={saveInFavorite}
                                 className='bg-amber-600 px-2 py-1 rounded-lg shadow-md shadow-slate-400/40'

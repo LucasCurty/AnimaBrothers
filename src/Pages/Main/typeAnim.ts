@@ -1,10 +1,13 @@
-export type ApiAnim = [{
-    title: string | any;
-    images:{jpg:{
-        image_url:string
-        large_image_url:string
-        small_image_url:string
-    }}
+import { ReactNode } from "react";
+
+export type ApiAnim = {
+    title: string ;
+    images:{
+        jpg:{
+            image_url:string
+            large_image_url:string
+            small_image_url:string
+        }};
     mal_id: number;
     genres:[{name:string;}];
     synopsis:string;
@@ -14,7 +17,8 @@ export type ApiAnim = [{
     status:string;
     trailer:{
         embed_url:string;
-
     }
-    members:Number;
-}]
+    members:ReactNode;
+    score: Number;
+    favorites: ReactNode;
+}

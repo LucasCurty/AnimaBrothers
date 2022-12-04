@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useFetch } from '../../../shared/Hooks/useFatch';
-// import SearchInput from './components/SearchInput'
+ import {Search} from '@styled-icons/ionicons-outline'
 
 import useDebounce from '../../../shared/Hooks/useDebounce';
 
@@ -11,7 +11,7 @@ import {ApiAnim} from '../typeAnim'
 export default function ListadeAnimes(){
     const [animeName, setAnimeName] = useState<string>('')
 
-    const {data , isFetching} = useFetch<ApiAnim>(`anime?q=${animeName}`)
+    const {data , isFetching} = useFetch<ApiAnim[]>(`anime?q=${animeName}`)
 
 
     function handleChange(e : any){
@@ -20,12 +20,14 @@ export default function ListadeAnimes(){
     const debounced = useDebounce(handleChange, 500)
 
     return(
-        <section>
+        <section className='container text-center'>
             <form>
                 <input
-                    placeholder='Type the name of the anime...'
+                    placeholder={`Enter your anime name...`}  
                     onChange={debounced}
+                    className='rounded-lg px-2 py-1'
                 />
+                <Search className='w-10 p-1 text-amber-600 animate-pulse'/>
             </form>
             <div className='grid grid-cols-4 gap-2 '>
                 { isFetching ? <p style={{paddingTop:"1rem"}}>Loading...</p> 
@@ -34,8 +36,7 @@ export default function ListadeAnimes(){
                         {data?.map((item,index)=>{
                             return(
                                 <div key={index} className='w-fit m-x-full hover:shadow-xl' >                               
-                                    <a  href={`/actualanime/${item}`}
-                                        
+                                    <a  href={`/actualanime/${item.mal_id}`}
                                     >
                                     <h1 className='text-center text-white'>{item.title}</h1>
                                     <img className='m-auto' src={item.images.jpg.image_url} 

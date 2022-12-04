@@ -10,10 +10,10 @@ import "swiper/css/pagination";
 import { CaretDown } from '@styled-icons/ionicons-outline';
 
 
-export default function MaisVistos(){
-    const {data} = useFetch<ApiAnim>(`top/anime`)
-    const top10 = data?.slice(0,10)
-
+export default function Top10(){
+    let {data} = useFetch<ApiAnim[]>("top/anime")
+    let top10 = data?.slice(0,10)
+    console.log(data)
     return(
         <div>
             {!data ? 
@@ -32,8 +32,7 @@ export default function MaisVistos(){
                         autoplay={{delay: 2800, disableOnInteraction: false,}}
                         slidesPerView={4}
                         modules={[Autoplay,Pagination]}
-                        className="mySwiper pl-6"
-                        >
+                        className="mySwiper pl-6">
                         {top10?.map((item,index)=>(
                             <SwiperSlide key={index}>
                                 <a className="" href={`/actualanime/${item.mal_id}`} >

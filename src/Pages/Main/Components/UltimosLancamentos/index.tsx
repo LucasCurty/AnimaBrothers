@@ -16,7 +16,7 @@ import { useFetch } from '../../../../shared/Hooks/useFatch';
 
 export default function UltimosLancamentos(){
 
-    const {data} = useFetch<ApiAnim>('seasons/now')
+    const {data} = useFetch<ApiAnim[]>('seasons/now')
 
    console.log(data)
 
