@@ -25,13 +25,12 @@ export default function Meusfavoritos(){
     }
 }
 
-
 async function Delete(title : string) {
    await deleteDoc(doc(db, `${currentUser?.name}`, title))
     getUsers()
 }
 
-useEffect( ()=>{getUsers();},[currentUser?.isLogged,])
+useEffect( ()=>{getUsers();},[currentUser?.isLogged])
 
     return(
         <section>
