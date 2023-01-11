@@ -1,3 +1,4 @@
+
 # AnimaBrother
 > *Um CRUD de animes, feito para estudar um pouco mais sobre **Typescript** e **Tailwind**.*
 
@@ -10,9 +11,9 @@
 #
 
 <div align="center">
-  <img  src="https://user-images.githubusercontent.com/74004642/167512723-6f0ad600-1884-49f5-8615-2de1699a9714.gif" alt="imagemProject"/>
+
+  ![video222](https://user-images.githubusercontent.com/74004642/211849103-7c20631e-db43-4f13-86b3-23a929c49c6c.gif)
   
-  *refazendo o responsivo*
 </div>
 
 **Teste aqui** ↓
