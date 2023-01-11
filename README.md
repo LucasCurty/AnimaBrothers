@@ -1,5 +1,5 @@
 # AnimaBrother
-> *Um CRUD de animes, feito para estudar um pouco mais sobre **typescript** e **styled-Componentes**.*
+> *Um CRUD de animes, feito para estudar um pouco mais sobre **Typescript** e **Tailwind**.*
 
 **Neste projeto você consegue :**
 
@@ -18,7 +18,7 @@
 **Teste aqui** ↓
 
 🔨 
-*Para conferir o projeto clique [aqui](https://anima-brothers.vercel.app/), voce sera redirecionado para site da vercel, onde estou hospedando.🔨*
+*Para conferir o projeto clique [aqui](https://anima-brothers.vercel.app/), voce sera redirecionado, onde estou hospedando pela [Vercel](https://vercel.com/).🔨*
 
 <br/>
 
@@ -30,16 +30,14 @@
 
 >Você ira conseguir logar clicando no icone do usuario 👤, logando sua conta google.
 
-> **Obs: Isto é um proejto, então não tenho acesso ao seu email diretamente.**
-
 **🔎 Buscando:**
->Clicando no icone do menu, e na opção [ Lista ], você poderia procurar um anime através de seu nome.
+>Clicando no icone do menu, e na opção `Anime List`, você poderia procurar um anime através de seu nome.
 
-**💚 Adicionando:**
+**⚡ Adicionando:**
 >Você consegue adicionar um anime selecionando ele, depois ira aparecer um botão para adicionar aos seus favoritos.
 
-**💔 Apagando:**
->Em sua lista voce conseguirá apagar clicando no icone 💔 logo abaixo da imagem do anime.
+**🗑️ Apagando:**
+>Em sua lista, você conseguirá apagar clicando no icone `⚡` .
 
 >**⚙️ Obs: Para adicionar ou apagar, você precisará estar logado.**
 
@@ -49,7 +47,7 @@
 ## ☄️ Tecnologias usadas :
 - [React](https://create-react-app.dev/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Styled Componentes](https://styled-components.com/docs/basics#extending-styles)
+- [Tailwind](https://www.tailwindcss.com/)
 - [Firebase](https://firebase.google.com/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Swiper](https://swiperjs.com/get-started)
@@ -60,9 +58,9 @@
 ## 🧑🏻‍🎓Oque aprendi :
 - Criar hooks personalizados.
 - Tipagem com typescript.
-- Biblioteca styled components.
+- Biblioteca Tailwind.
 - Integração de login e database com Firebase.
 
 <br/>
 
-**Futuros uploads :** *Pretendo arrumar o css, arrumar o responsivo e organizar os documentos*
+**Futuros uploads :** *Construção do reponsivo e alterações de bugs*

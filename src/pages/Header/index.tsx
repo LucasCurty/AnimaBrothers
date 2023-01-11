@@ -66,11 +66,11 @@ const {currentUser} = useAuth()
                 <nav className='absolute z-10 top-20 right-0 bg-amber-600' onMouseLeave={show}>
                     <ul className='text-white'>
                         <Link to="/meusfavoritos" >
-                            <li className='p-2 hover:bg-white hover:text-amber-600'>Meus Favoritos</li>
+                            <li className='p-2 hover:bg-white hover:text-amber-600'>My Favorites</li>
                         </Link>
                         
                         <Link to="/listadeAnimes" >
-                            <li className='p-2 hover:bg-white hover:text-amber-600'>Lista</li>
+                            <li className='p-2 hover:bg-white hover:text-amber-600'>Anime List</li>
                         </Link>
                     </ul>
                 </nav>
