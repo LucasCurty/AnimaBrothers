@@ -13,7 +13,6 @@ import { CaretDown } from '@styled-icons/ionicons-outline';
 export default function Top10(){
     let {data} = useFetch<ApiAnim[]>("top/anime")
     let top10 = data?.slice(0,10)
-    console.log(data)
     return(
         <div>
             {!data ? 

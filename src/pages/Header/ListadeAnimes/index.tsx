@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 
 import { useFetch } from '../../../shared/Hooks/useFatch';
  import {Search} from '@styled-icons/ionicons-outline'
@@ -6,7 +6,7 @@ import { useFetch } from '../../../shared/Hooks/useFatch';
 import useDebounce from '../../../shared/Hooks/useDebounce';
 
 // Object type
-import {ApiAnim} from '../typeAnim'
+import {ApiAnim} from '../../Main/typeAnim'
 
 export default function ListadeAnimes(){
     const [animeName, setAnimeName] = useState<string>('')
@@ -14,7 +14,7 @@ export default function ListadeAnimes(){
     const {data , isFetching} = useFetch<ApiAnim[]>(`anime?q=${animeName}`)
 
 
-    function handleChange(e : any){
+    function handleChange(e: { target: { value: SetStateAction<string>; }; }){
         setAnimeName(e.target.value)
     }
     const debounced = useDebounce(handleChange, 500)

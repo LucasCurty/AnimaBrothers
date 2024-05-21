@@ -1,6 +1,6 @@
 
 import { useAuth } from '../../../shared/Hooks/useAuth';
-import { LogIn, LogOut} from '@styled-icons/ionicons-outline'
+import { LogIn, LogOut, Settings} from '@styled-icons/ionicons-outline'
 
 export default function Login(){
     const {currentUser,singInGoogle,singOutGoogle} = useAuth();
@@ -13,23 +13,33 @@ export default function Login(){
         if(currentUser){return singOutGoogle();}
     } 
         return(
-            <ul className='absolute'>     
+            <div className='select-none '>     
                 {currentUser?.isLogged ?
-                    <li className='flex bg-amber-500 w-24 rounded' >
-                        <button className='text-white px-2'onClick={handleUserLogout}>  
-                            Logout
-                        <LogOut  className='ml-1 text-white w-5'/>
+                <ul className='absolute pt-2'>
+                    <li className='flex  bg-stone-900 px-4' >
+                        <button className='py-2 text-white'onClick={handleUserLogout}>  
+                        <Settings  className='pr-1 text-white w-5'/>
+                           Settings
                         </button>
                     </li>
+                    <li className='flex  bg-stone-900 px-4' >
+                        <button className='py-2 text-white'onClick={handleUserLogout}>  
+                        <LogOut  className='pr-1 text-white w-5'/>
+                           Logout
+                        </button>
+                    </li>
+                </ul>
                 : 
-                    <li className='flex bg-amber-500 w-24 rounded'>
-                        <button className='text-white px-2'onClick={handleUserLogin}> 
-                            Login 
-                            <LogIn className='text-white w-5'/>
+                <ul className='absolute pt-2'>
+                   <li className='flex  bg-stone-900 px-4' >
+                        <button className='py-2 text-white'onClick={handleUserLogin}>  
+                        <LogIn  className='pr-1 text-white w-5'/>
+                           Login
                         </button>
                     </li>
+                </ul>
                 } 
-        </ul>
+        </div>
     )
     
     
