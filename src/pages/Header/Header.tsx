@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../shared/Hooks/useAuth';
 
 import {Person,Bookmark, Search, CaretDown} from '@styled-icons/ionicons-outline'
-import Login from './Login/Login';
+import Login from './Login';
 
 
 export default function Header(){

@@ -1,10 +1,10 @@
 // import pages area
-import Main from "../pages/Main/index"
-import ActualAnime from "../pages/Main/ActualAnime/index"
-import ListadeAnimes from "../pages/Header/ListadeAnimes/index"
-import Header from "../pages/Header"
+import Main from "../pages/Main/Main"
+import ActualAnime from "../pages/Main/ActualAnime"
+import ListadeAnimes from "../pages/Header/ListadeAnimes"
+import Header from "../pages/Header/Header"
 import Footer from "../pages/Footer"
-import Meusfavoritos from "../pages/Header/Meusfavoritos" 
+import Meusfavoritos from "../pages/Header/MeusFavoritos" 
 
 //import react-router-dom
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'

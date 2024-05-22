@@ -9,5 +9,18 @@
 }
 body {
   -webkit-font-smoothing: antialiased !important;
-  background-color: #0F172A;
+  background-color: black;
+}
+.swiper-pagination-bullet{
+  background-color: white;
+}
+.swiper-pagination-bullet-active{
+  background-color: orange;
+}
+::-webkit-scrollbar{
+  width: 3px;
+  background-color: rgba(128, 128, 128, 0.322);
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(128, 128, 128, 0.375);
 }

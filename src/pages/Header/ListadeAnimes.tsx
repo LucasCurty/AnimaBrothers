@@ -1,12 +1,12 @@
 import { SetStateAction, useState } from 'react'
 
-import { useFetch } from '../../../shared/Hooks/useFatch';
+import { useFetch } from '../../shared/Hooks/useFatch';
  import {Search} from '@styled-icons/ionicons-outline'
 
-import useDebounce from '../../../shared/Hooks/useDebounce';
+import useDebounce from '../../shared/Hooks/useDebounce';
 
 // Object type
-import {ApiAnim} from '../../Main/typeAnim'
+import {ApiAnim} from '../Main/typeAnim'
 
 export default function ListadeAnimes(){
     const [animeName, setAnimeName] = useState<string>('')

@@ -1,7 +1,7 @@
 import { getFirestore, collection,getDocs, DocumentData, doc, deleteDoc} from 'firebase/firestore'
 import { useEffect, useState } from 'react';
-import { useAuth } from '../../../shared/Hooks/useAuth';
-import { appfirebase } from '../../../services/firebaseConfig';
+import { useAuth } from '../../shared/Hooks/useAuth';
+import { appfirebase } from '../../services/firebaseConfig';
 import {Trash} from '@styled-icons/ionicons-outline'
 
 type AnimeType = { 

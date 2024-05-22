@@ -1,5 +1,5 @@
 
-import { useAuth } from '../../../shared/Hooks/useAuth';
+import { useAuth } from '../../shared/Hooks/useAuth';
 import { LogIn, LogOut, Settings} from '@styled-icons/ionicons-outline'
 
 export default function Login(){
