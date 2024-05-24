@@ -8,8 +8,8 @@ export default function Main(){
         <main className='container mx-auto pt-20'>         
            <MaisVistos />
            <LancamentosFuturos /> 
-           <TopManga />
            <TopDez />
+           <TopManga />
         </main>
     )
 }
