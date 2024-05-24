@@ -11,10 +11,9 @@ import { CaretDown, Eye } from '@styled-icons/ionicons-outline';
 import { Link } from 'react-router-dom';
 
 
-export default function Top10(){
-    let {data} = useFetch<ApiAnim[]>("top/anime")
+export default function MaisVistos(){
+    let {data} = useFetch<ApiAnim[]>("seasons/now")
     let top10 = data?.slice(0,10)
-    console.log(top10)
     return(
         <div>
             {!data ? 
@@ -22,9 +21,9 @@ export default function Top10(){
                     <em className=' text-white'>Loading Top animes . . .</em> 
                 </div>
                 :
-                <div className='h-screen'>
+                <div className='h-5/6'>
                 <h2 className='text-white font-medium inline-bloc ml-8 my-3'>
-                    TOP 10 <CaretDown  className=' w-5 '/> 
+                    LANÇADOS RECENTEMENTE <CaretDown  className=' w-5 '/> 
                 </h2>
                 <Swiper 
                     pagination={{dynamicBullets: true,}}

@@ -18,8 +18,8 @@ body {
   background-color: orange;
 }
 ::-webkit-scrollbar{
-  width: 3px;
-  background-color: rgba(128, 128, 128, 0.322);
+  width: 1px;
+  background-color: rgba(128, 128, 128, 0);
 }
 ::-webkit-scrollbar-thumb{
   background-color: rgba(128, 128, 128, 0.375);

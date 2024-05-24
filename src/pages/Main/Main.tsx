@@ -1,12 +1,15 @@
 import MaisVistos from './Components/MaisVistos'
-import UltimosLancamentos from './Components/UltimosLancamentos'
+import LancamentosFuturos from './Components/LancamentosFuturos'
+import TopManga from './Components/TopManga'
+import TopDez from './Components/TopDez'
 
 export default function Main(){    
     return(
         <main className='container mx-auto pt-20'>         
            <MaisVistos />
-           <UltimosLancamentos />
-           <UltimosLancamentos />
+           <LancamentosFuturos /> 
+           <TopManga />
+           <TopDez />
         </main>
     )
 }
