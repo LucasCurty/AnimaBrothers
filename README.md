@@ -4,15 +4,14 @@
 
 **Neste projeto você consegue :**
 
-- Criar um usuário com email.
+- Criar um usuário com email. (google)
 - Favoritar ou desfavoritar seus animes.
-- Buscar animes por nome.
 
 #
 
 <div align="center">
 
-  ![video222](https://user-images.githubusercontent.com/74004642/211849103-7c20631e-db43-4f13-86b3-23a929c49c6c.gif)
+
   
 </div>
 
